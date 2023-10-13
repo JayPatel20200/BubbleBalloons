@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    /* Reset some default browser styles */
+    body, h1, h2, img {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #F8F8F8; /* Light gray background color */
+    }
+
+    header {
+        background-color: #FF7F50; /* Coral color, you can change this */
+        color: #FFF; /* White text color */
+        text-align: center;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    .image {
+        flex: 1;
+        margin: 10px;
+        text-align: center;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border: 1px solid #DDD; /* Gray border */
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        margin-top: 10px;
+        color: #333; /* Dark gray text color */
+    }
+
+    /* Add more CSS styles as needed to customize the appearance */
+
+</style>
+<header>
+    <h1>Welcome to Bubble Balloon</h1>
+</header>
+<section class="image-gallery">
+    <div class="container">
+        <div class="image">
+            <img src="~/images/img1.jpg" alt="Balloon Image 1">
+            <h2>Balloons1</h2>
+        </div>
+        <div class="image">
+            <img src="~/images/img2.jpg" alt="Balloon Image 2">
+            <h2>Balloons2</h2>
+        </div>
+    </div>
+</section>

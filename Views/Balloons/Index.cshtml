@@ -1,0 +1,76 @@
+﻿@model BubbleBalloons.Models.BalloonTypeViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<form asp-controller="Balloons" asp-action="Index">
+    <p>
+        <select asp-for="BalloonType" asp-items="Model.Type">
+            <option value="">All</option>
+        </select>
+
+        Material: <input type="text" name="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Balloons[0].Material)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Balloons[0].Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Balloons[0].Size)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Balloons[0].Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Balloons[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Balloons[0].Rating)
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Balloons)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Material)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Size)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Color)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td> 
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rating)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
