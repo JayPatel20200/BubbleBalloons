@@ -23,8 +23,8 @@ namespace BubbleBalloons.Controllers
         public async Task<IActionResult> Index(string balloonType, string searchString)
         {
             IQueryable<string> balloonQuery = from m in _context.Balloon
-                                            orderby m.Type
-                                            select m.Type;
+                                              orderby m.Type
+                                              select m.Type;
 
             var balloons = from m in _context.Balloon
                          select m;
